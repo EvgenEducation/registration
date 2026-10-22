@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Реєстрація — Івент компанія</title>
+  <meta name="description" content="Створення нового акаунта">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="На головну">e<sup>iπ</sup>+1=0</a> <!-- я не можу вигадати собі логотип -->
+
+      <div class="header__info">
+        <span class="info info--phone">
+          <span class="info__icon" aria-hidden="true">📞</span>
+          <span>+38 (097) 777-55-77</span>
+        </span>
+        <span class="info info--city">
+          <span class="info__icon" aria-hidden="true">📍</span>
+          <span>м. Кривий Ріг</span>
+        </span>
+      </div>
+
+      <nav class="header__actions" aria-label="Головне меню">
+        <a href="index.html#events" class="btn btn--dark btn--events">Наші івенти</a>
+        <a href="login.html" class="btn btn--white">Вхід</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="auth">
+        <h1 class="auth__title">Реєстрація</h1>
+        <p class="auth__subtitle">Створіть акаунт, щоб замовляти заходи</p>
+
+        <div class="tabs" role="tablist">
+          <a href="login.html" class="tabs__item">Вхід</a>
+          <a href="register.html" class="tabs__item tabs__item--active" aria-current="page">Реєстрація</a>
+        </div>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label class="field__label" for="name">Ім'я</label>
+            <input class="field__input" type="text" id="name" name="name"
+                   placeholder="Ваше ім'я" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="phone">Телефон</label>
+            <input class="field__input" type="tel" id="phone" name="phone"
+                   placeholder="+38 (0__) ___-__-__" autocomplete="tel" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="email">Електронна пошта</label>
+            <input class="field__input" type="email" id="email" name="email"
+                   placeholder="name@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">Пароль</label>
+            <input class="field__input" type="password" id="password" name="password"
+                   placeholder="Мінімум 8 символів" autocomplete="new-password" minlength="8" required>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="agree" required>
+            <span>Я погоджуюсь з <a href="#">умовами використання</a> та політикою конфіденційності</span>
+          </label>
+
+          <button class="btn btn--gradient" type="submit">Зареєструватися</button>
+        </form>
+
+        <p class="form__switch">
+          Вже є акаунт? <a href="login.html">Увійти</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Івент компанія · м. Кривий Ріг</p>
+    </footer>
+
+  </div>
+</body>
+</html>

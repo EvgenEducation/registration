@@ -1,0 +1,431 @@
+/* кольори */
+:root {
+  --bg: #1d1f24;
+  --card: #282b32;
+  --field: rgba(255, 255, 255, 0.07);
+  --pill-dark: #343a3e;
+  --text: #ffffff;
+  --text-muted: #c5c5c5;
+  --accent: #fafa0b;
+  --dark-on-gradient: #252121;
+  --gradient: linear-gradient(
+    102.65deg,
+    rgb(234, 66, 42) 0%,
+    rgb(246, 144, 32) 48.6%,
+    rgb(255, 198, 25) 101.4%
+  );
+  --radius-pill: 60px;
+  --font: "Inter", Arial, sans-serif;
+  --container: 1512px;
+}
+
+/* оснонве */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* лінії */
+.page {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 50%;
+  width: min(100%, var(--container));
+  transform: translateX(-50%);
+  background:
+    linear-gradient(to bottom, rgba(96, 101, 113, 0), rgba(96, 101, 113, 0.05))
+      50% 0 / 33.33% 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) 0 0 / 1px 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) 33.33% 0 / 1px 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) 66.66% 0 / 1px 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) 100% 0 / 1px 100% no-repeat;
+  pointer-events: none;
+}
+
+.page > * {
+  position: relative;
+}
+
+/* шапка */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 35px 84px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 74px;
+  padding: 0 28px;
+  border-radius: 40px;
+  background: #fff;
+  color: #000;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header__info,
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.info {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.info__icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--field);
+  font-size: 22px;
+}
+
+.info--city {
+  color: var(--accent);
+}
+
+/* кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 40px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn--white {
+  background: #fff;
+  color: #000;
+}
+
+.btn--dark {
+  background: var(--pill-dark);
+  color: #fff;
+}
+
+.btn--gradient {
+  height: 70px;
+  width: 100%;
+  background: var(--gradient);
+  color: var(--dark-on-gradient);
+  letter-spacing: 0.05em;
+}
+
+.btn--gradient:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 30px rgba(246, 144, 32, 0.25);
+}
+
+/* головне */
+.main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 20px 20px 80px;
+}
+
+.auth {
+  width: 100%;
+  max-width: 560px;
+  padding: 48px;
+  border-radius: 32px;
+  background: var(--card);
+  box-shadow: 0 9px 16px rgba(0, 0, 0, 0.21);
+}
+
+.auth__title {
+  margin: 0 0 8px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.auth__subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* перемикач */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 32px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+}
+
+.tabs__item {
+  display: grid;
+  place-items: center;
+  height: 52px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.tabs__item:hover {
+  color: #fff;
+}
+
+.tabs__item--active {
+  background: var(--gradient);
+  color: var(--dark-on-gradient);
+  pointer-events: none;
+}
+
+/* форма */
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field__label {
+  padding-left: 24px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field__input {
+  width: 100%;
+  height: 60px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.field__input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.field__input:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.field__input:user-invalid {
+  border-color: #ea422a;
+}
+
+.form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.form__row a:hover {
+  color: var(--accent);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.check input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border-radius: 6px;
+  accent-color: #f69020;
+  cursor: pointer;
+}
+
+.check a {
+  color: var(--accent);
+}
+
+.form__switch {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.form__switch a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.form__switch a:hover {
+  text-decoration: underline;
+}
+
+/* футер */
+.footer {
+  padding: 24px 84px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* адаптація */
+@media (max-width: 1200px) {
+  .header {
+    padding: 24px 32px;
+  }
+
+  .info--phone span:last-child,
+  .info--city span:last-child {
+    display: none;
+  }
+
+  .info {
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 19px 20px;
+  }
+
+  .header__info,
+  .btn--events {
+    display: none;
+  }
+
+  .logo {
+    height: 47px;
+    padding: 0 18px;
+    font-size: 20px;
+  }
+
+  .btn {
+    height: 51px;
+    padding: 0 28px;
+    font-size: 14px;
+  }
+
+  .btn--gradient {
+    height: 56px;
+  }
+
+  .main {
+    padding: 16px 16px 48px;
+  }
+
+  .auth {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
+  .auth__title {
+    font-size: 32px;
+  }
+
+  .auth__subtitle {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .tabs__item {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .field__input {
+    height: 54px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+}

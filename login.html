@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вхід — Івент компанія</title>
+  <meta name="description" content="Вхід в особистий кабінет">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="На головну">e<sup>iπ</sup>+1=0</a> <!-- логотип поки не вигадав -->
+
+      <div class="header__info">
+        <span class="info info--phone">
+          <span class="info__icon" aria-hidden="true">📞</span>
+          <span>+38 (097) 777-55-77</span>
+        </span>
+        <span class="info info--city">
+          <span class="info__icon" aria-hidden="true">📍</span>
+          <span>м. Кривий Ріг</span>
+        </span>
+      </div>
+
+      <nav class="header__actions" aria-label="Головне меню">
+        <a href="index.html#events" class="btn btn--dark btn--events">Наші івенти</a>
+        <a href="register.html" class="btn btn--white">Реєстрація</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="auth">
+        <h1 class="auth__title">Вхід</h1>
+        <p class="auth__subtitle">Раді бачити вас знову</p>
+
+        <div class="tabs" role="tablist">
+          <a href="login.html" class="tabs__item tabs__item--active" aria-current="page">Вхід</a>
+          <a href="register.html" class="tabs__item">Реєстрація</a>
+        </div>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label class="field__label" for="email">Електронна пошта</label>
+            <input class="field__input" type="email" id="email" name="email"
+                   placeholder="name@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">Пароль</label>
+            <input class="field__input" type="password" id="password" name="password"
+                   placeholder="Введіть пароль" autocomplete="current-password" minlength="8" required>
+          </div>
+
+          <div class="form__row">
+            <label class="check">
+              <input type="checkbox" name="remember">
+              <span>Запам'ятати мене</span>
+            </label>
+            <a href="#">Забули пароль?</a>
+          </div>
+
+          <button class="btn btn--gradient" type="submit">Увійти</button>
+        </form>
+
+        <p class="form__switch">
+          Ще немає акаунта? <a href="register.html">Зареєструватися</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Івент компанія · м. Кривий Ріг</p>
+    </footer>
+
+  </div>
+</body>
+</html>
